@@ -48,6 +48,8 @@ OSS core for US residential security-deposit return workflows. **Not a full PMS.
 
 ## Develop
 
+[Launch note](docs/launch-note.md)
+
 ```bash
 go test ./...
 go run ./cmd/drc-notify -cases cases.json -within 7
