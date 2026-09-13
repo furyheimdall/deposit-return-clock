@@ -1,0 +1,18 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go
+vendor/
+coverage.out
+coverage.html
+
+# Editor
+.idea/
+.vscode/
+*.swp
