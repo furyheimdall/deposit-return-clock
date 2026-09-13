@@ -42,7 +42,7 @@ OSS core for US residential security-deposit return workflows. **Not a full PMS.
 | [`clock/`](clock/) | Possession clock (CA / NY / FL / NJ) | Implemented (#4). Pure library; see [`clock/README.md`](clock/README.md). |
 | [`evidence/`](evidence/) | Append-only evidence timeline (photo / receipt / attachment / memo) | Implemented (#3) |
 | [`pack/`](pack/) | Itemized return pack: deduction lines, remaining balance, PDF + checklist | Implemented (#3) |
-| [`notify/`](notify/) | Reminders D-7 / D-3 / due | Stub (#5). Consume `clock.Result` later; do not couple here. |
+| [`notify/`](notify/) | Reminders D-7 / D-3 / due | Implemented (#5). Schedule from `clock.Result`; pluggable stdout / file / webhook. CLI: `go run ./cmd/drc-notify`. See [`notify/README.md`](notify/README.md). |
 
 `pack` currently accepts a caller-supplied mock `DueBy`; wiring to `clock.Result` is a follow-up.
 
@@ -50,6 +50,8 @@ OSS core for US residential security-deposit return workflows. **Not a full PMS.
 
 ```bash
 go test ./...
+go run ./cmd/drc-notify -cases cases.json -within 7
+go run ./cmd/drc-notify -cases cases.json -fire -notifier stdout
 ```
 
 Module: [`github.com/furyheimdall/deposit-return-clock`](https://github.com/furyheimdall/deposit-return-clock) · License: [MIT](LICENSE)

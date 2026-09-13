@@ -5,7 +5,7 @@ Pure library: statutory **security-deposit return deadlines** for the locked MVP
 > **Not legal advice.** Dig-sourced deadlines; operators must verify current statute.
 > Day counts below are the Epic #1 / README **canon numbers**. This package implements those numbers; it is not a 50-state survey and it will not guess an unsupported state.
 
-Reminders (D-7 / D-3 / due) live in [`notify/`](../notify/) and are **not** implemented here. `Result` exposes `DeadlineOn`, `State`, `EarlyExit`, and `Branch` so #5 can consume this API later.
+Reminders (D-7 / D-3 / due) live in [`notify/`](../notify/) and are **not** implemented here. `Result` exposes `DeadlineOn`, `State`, `EarlyExit`, and `Branch` so notify consumes this API (`clock.Compute` → `notify.Schedule`).
 
 ## Public API
 

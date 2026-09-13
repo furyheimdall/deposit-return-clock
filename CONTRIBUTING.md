@@ -10,4 +10,4 @@ Do not send PRs for a full PMS, tenant claim app, banking/escrow, lawyer automat
 go test ./...
 ```
 
-Keep `clock/`, `evidence/`, `pack/`, and `notify/` as the package seats. `clock/` is the possession-clock library (#4). `evidence/` and `pack/` implement the #3 timeline and return-pack slice. `notify/` remains a stub until #5. Do not add 50-state tables or reminder jobs in `clock/`.
+Keep `clock/`, `evidence/`, `pack/`, and `notify/` as the package seats. `clock/` is the possession-clock library (#4). `evidence/` and `pack/` implement the #3 timeline and return-pack slice. `notify/` is the D-7 / D-3 / due reminder job (#5); it consumes `clock.Result` and must not rework clock rules. Do not add 50-state tables or reminder jobs in `clock/`.
