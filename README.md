@@ -40,9 +40,11 @@ OSS core for US residential security-deposit return workflows. **Not a full PMS.
 | Package | Seat | Status |
 | --- | --- | --- |
 | [`clock/`](clock/) | Possession clock (CA / NY / FL / NJ) | Implemented (#4). Pure library; see [`clock/README.md`](clock/README.md). |
-| [`evidence/`](evidence/) | Evidence timeline | Stub (#3) |
-| [`pack/`](pack/) | Itemized return pack (PDF + checklist) | Stub (#3) |
+| [`evidence/`](evidence/) | Append-only evidence timeline (photo / receipt / attachment / memo) | Implemented (#3) |
+| [`pack/`](pack/) | Itemized return pack: deduction lines, remaining balance, PDF + checklist | Implemented (#3) |
 | [`notify/`](notify/) | Reminders D-7 / D-3 / due | Stub (#5). Consume `clock.Result` later; do not couple here. |
+
+`pack` currently accepts a caller-supplied mock `DueBy`; wiring to `clock.Result` is a follow-up.
 
 ## Develop
 
