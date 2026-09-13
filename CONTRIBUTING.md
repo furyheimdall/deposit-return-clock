@@ -10,4 +10,4 @@ Do not send PRs for a full PMS, tenant claim app, banking/escrow, lawyer automat
 go test ./...
 ```
 
-Keep `clock/`, `evidence/`, `pack/`, and `notify/` as the package seats. Stubs are intentional until those slices land.
+Keep `clock/`, `evidence/`, `pack/`, and `notify/` as the package seats. `clock/` is the possession-clock library (#4). `evidence/`, `pack/`, and `notify/` remain stubs until those slices land. Do not add 50-state tables or reminder jobs in `clock/`.

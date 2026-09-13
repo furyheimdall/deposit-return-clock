@@ -9,6 +9,7 @@ OSS core for US residential security-deposit return workflows. **Not a full PMS.
 **ICP:** Solo LL / small PM (rejects heavy PMS; Sheets/Drive inertia).
 
 > **Not legal advice.** Dig-sourced deadlines; verify current statute.
+> Possession-clock cites and early-exit notes: [`clock/README.md`](clock/README.md).
 
 ## MVP IN (locked)
 
@@ -36,14 +37,12 @@ OSS core for US residential security-deposit return workflows. **Not a full PMS.
 
 ## Package seats
 
-Scaffold only. Domain logic lands in later issues — do not treat stubs as complete.
-
-| Package | Seat | Later issue |
+| Package | Seat | Status |
 | --- | --- | --- |
-| [`clock/`](clock/) | Possession clock (CA / NY / FL / NJ) | #4 |
-| [`evidence/`](evidence/) | Evidence timeline | #3 |
-| [`pack/`](pack/) | Itemized return pack (PDF + checklist) | #3 |
-| [`notify/`](notify/) | Reminders D-7 / D-3 / due | #5 |
+| [`clock/`](clock/) | Possession clock (CA / NY / FL / NJ) | Implemented (#4). Pure library; see [`clock/README.md`](clock/README.md). |
+| [`evidence/`](evidence/) | Evidence timeline | Stub (#3) |
+| [`pack/`](pack/) | Itemized return pack (PDF + checklist) | Stub (#3) |
+| [`notify/`](notify/) | Reminders D-7 / D-3 / due | Stub (#5). Consume `clock.Result` later; do not couple here. |
 
 ## Develop
 
