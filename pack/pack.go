@@ -106,7 +106,7 @@ func Build(in Input) (Pack, error) {
 	if in.Timeline != nil {
 		ev = in.Timeline.Events()
 	}
-	dueNote := "mock deadline (clock/" + clock.Seat + " #4 pending)"
+	dueNote := "mock deadline (" + clock.Seat + "/#4 pending)"
 	if in.DueBy.IsZero() {
 		dueNote = "deadline unset; supply DueBy or wait for clock/#4"
 	}
